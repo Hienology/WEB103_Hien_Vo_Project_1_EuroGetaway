@@ -1,0 +1,26 @@
+{
+  "name": "web103_hien_vo_project_1_eurogetaway",
+  "version": "1.0.0",
+  "description": "Simple website demonstration, listing pages representing European destinations.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hienology/WEB103_Hien_Vo_Project_1_EuroGetaway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hienology/WEB103_Hien_Vo_Project_1_EuroGetaway/issues"
+  },
+  "homepage": "https://github.com/Hienology/WEB103_Hien_Vo_Project_1_EuroGetaway#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}
