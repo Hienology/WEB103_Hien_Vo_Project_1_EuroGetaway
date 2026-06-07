@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>European Getaways</h1>
+    <p>Discover nine unforgettable destinations across Europe.</p>
+
+    <label for="searchInput">Search destinations</label>
+    <input type="search" id="searchInput" placeholder="Type a city or country..." aria-label="Search destinations">
+
+    <section class="destination-grid" id="destinationGrid" aria-live="polite">
+      <% destinations.forEach((destination) => { %>
+        <article class="destination-card">
+          <img src="<%= destination.imageUrl %>" alt="<%= destination.name %>, <%= destination.country %>">
+          <h2><%= destination.name %> <small><%= destination.flag %></small></h2>
+          <p><strong><%= destination.country %></strong></p>
+          <p><%= destination.shortDescription %></p>
+          <a role="button" href="/destinations/<%= destination.slug %>">Explore <%= destination.name %></a>
+        </article>
+      <% }) %>
+    </section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>

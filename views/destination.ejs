@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="hero" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15)), url('<%= destination.imageUrl %>');">
+    <div class="hero-content container">
+      <h1><%= destination.name %> <small><%= destination.flag %></small></h1>
+      <p><%= destination.country %></p>
+    </div>
+  </header>
+
+  <main class="container detail-layout">
+    <section>
+      <h2>Quick Facts</h2>
+      <div class="facts-grid">
+        <article><strong>Best Time</strong><br><%= destination.bestTimeToVisit %></article>
+        <article><strong>Vibe</strong><br><%= destination.vibe %></article>
+        <article><strong>Cost Level</strong><br><%= destination.costLevel %></article>
+        <article><strong>Recommended Stay</strong><br><%= destination.recommendedStay %></article>
+      </div>
+    </section>
+
+    <section class="intro-copy">
+      <h2>Why Visit <%= destination.name %>?</h2>
+      <p><%= destination.whyVisit %></p>
+      <img src="<%= destination.imageUrl %>" alt="Scenery in <%= destination.name %>">
+      <p><%= destination.travelTips %></p>
+
+      <h3>Top Attractions</h3>
+      <ul>
+        <% destination.topAttractions.forEach((attraction) => { %>
+          <li><%= attraction %></li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <a href="/">← Back to all destinations</a>
+  </main>
+</body>
+</html>
