@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="home-page">
   <main class="container">
     <h1>European Getaways</h1>
     <p>Discover nine unforgettable destinations across Europe.</p>
@@ -19,7 +19,7 @@
       <% destinations.forEach((destination) => { %>
         <article class="destination-card">
           <img src="<%= destination.imageUrl %>" alt="<%= destination.name %>, <%= destination.country %>">
-          <h2><%= destination.name %> <small><%= destination.flag %></small></h2>
+          <h2><%= destination.name %></h2>
           <p><strong><%= destination.country %></strong></p>
           <p><%= destination.shortDescription %></p>
           <a role="button" href="/destinations/<%= destination.slug %>">Explore <%= destination.name %></a>

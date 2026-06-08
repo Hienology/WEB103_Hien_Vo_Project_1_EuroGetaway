@@ -10,14 +10,14 @@
 <body>
   <header class="hero" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15)), url('<%= destination.imageUrl %>');">
     <div class="hero-content container">
-      <h1><%= destination.name %> <small><%= destination.flag %></small></h1>
-      <p><%= destination.country %></p>
+      <h1><%= destination.name %></h1>
+      <p class="destination-country"><%= destination.country %> <span class="destination-flag"><%= destination.flag %></span></p>
     </div>
   </header>
 
   <main class="container detail-layout">
     <section>
-      <h2>Quick Facts</h2>
+      <h2 class="centered-heading">Quick Facts</h2>
       <div class="facts-grid">
         <article><strong>Best Time</strong><br><%= destination.bestTimeToVisit %></article>
         <article><strong>Vibe</strong><br><%= destination.vibe %></article>
@@ -28,9 +28,22 @@
 
     <section class="intro-copy">
       <h2>Why Visit <%= destination.name %>?</h2>
-      <p><%= destination.whyVisit %></p>
+      <% destination.whyVisit.split(/\n\n+/).forEach((paragraph) => { %>
+        <p><%= paragraph %></p>
+      <% }) %>
       <img src="<%= destination.imageUrl %>" alt="Scenery in <%= destination.name %>">
-      <p><%= destination.travelTips %></p>
+
+      <section class="travel-tips">
+        <h2>Travel Tips</h2>
+        <p class="section-subtitle"><%= destination.travelTipsIntro %></p>
+        <h3>Before You Go</h3>
+        <h4>What to keep in mind</h4>
+        <ul>
+          <% destination.travelTips.forEach((tip) => { %>
+            <li><%= tip %></li>
+          <% }) %>
+        </ul>
+      </section>
 
       <h3>Top Attractions</h3>
       <ul>
